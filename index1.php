@@ -1,14 +1,16 @@
 <?php
 	header("Content-type: text/html; charset=utf-8");
-	
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
 	$dbname = "database_news";
+	$id='';
+ 	$port=null;
+    $socket="/cloudsql/webtintuc-238504:us-central1:webtintuc";
 	$arays= array(array());
 	
 	try{
-		$conn = mysqli_connect($servername, $username, $password,$dbname);
+		$conn = mysqli_connect($servername, $username, $password,$dbname,$port,$socket);
 		mysqli_set_charset($conn, 'UTF8');
 		if (!$conn) {
 			die("Connection failed: " . mysqli_connect_error());
